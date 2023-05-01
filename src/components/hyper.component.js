@@ -181,7 +181,7 @@ export default class Tutorial extends Component {
                 ) : (
                     <div>
                         <br />
-                        <p>Please click on a Tutorial...</p>
+                        <p>Please click on a Hypercar...</p>
                     </div>
                 )}
             </div>

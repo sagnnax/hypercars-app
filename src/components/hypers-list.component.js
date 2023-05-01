@@ -68,7 +68,7 @@ export default class HyperList extends Component {
         return (
             <div className="list row">
                 <div className="col-md-6">
-                    <h4>Tutorials List</h4>
+                    <h4>Lista de Hypercars</h4>
 
                     <ul className="list-group">
                         {tutorials &&
@@ -92,7 +92,7 @@ export default class HyperList extends Component {
                     ) : (
                         <div>
                             <br />
-                            <p>Please click on a Tutorial...</p>
+                            <p>Please click on a Hypercar...</p>
                         </div>
                     )}
                 </div>
