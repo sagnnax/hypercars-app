@@ -12,13 +12,13 @@ class App extends Component {
     return (
       <div>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <a href="/tutorials" className="navbar-brand">
-            carros vergas
+          <a href="/" className="navbar-brand">
+            Hypercars
           </a>
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link to={"/tutorials"} className="nav-link">
-                Tutorials
+              <Link to={"/"} className="nav-link">
+                List
               </Link>
             </li>
             <li className="nav-item">
@@ -29,8 +29,8 @@ class App extends Component {
           </div>
         </nav>
 
-        <div className="container mt-3">
-          <h2>React Firestore CRUD</h2>
+        <div className="container mt-3 bg-dark mx-auto">
+          <h2 >Hypercars App</h2>
           <Routes>
             <Route path="/" element={<HypersList />} />
             <Route path="add" element={<AddHyper />} />

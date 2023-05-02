@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import TutorialDataService from "../services/hyper.services";
+import Reactions from './reactions.component';
+import CommentBox from './comments.component';
 
-export default class Tutorial extends Component {
+export default class Hypercars extends Component {
     constructor(props) {
         super(props);
         this.onChangeTitle = this.onChangeTitle.bind(this);
@@ -15,6 +17,7 @@ export default class Tutorial extends Component {
                 id: null,
                 title: "",
                 description: "",
+                image: "",
                 published: false,
             },
             message: "",
@@ -90,7 +93,7 @@ export default class Tutorial extends Component {
         TutorialDataService.update(this.state.currentTutorial.id, data)
             .then(() => {
                 this.setState({
-                    message: "The tutorial was updated successfully!",
+                    message: "The Hypercar was updated successfully!",
                 });
             })
             .catch((e) => {
@@ -113,7 +116,7 @@ export default class Tutorial extends Component {
 
         return (
             <div>
-                <h4>Tutorial</h4>
+                <h4>Hypercar</h4>
                 {currentTutorial ? (
                     <div className="edit-form">
                         <form>
@@ -137,7 +140,10 @@ export default class Tutorial extends Component {
                                     onChange={this.onChangeDescription}
                                 />
                             </div>
-
+                            <div className="form-group">
+                                <label htmlFor="url"> Imagen: </label>
+                                <img src={currentTutorial.url} alt="Pic" width="540" height="280"></img>
+                            </div>
                             <div className="form-group">
                                 <label>
                                     <strong>Status:</strong>
@@ -148,14 +154,14 @@ export default class Tutorial extends Component {
 
                         {currentTutorial.published ? (
                             <button
-                                className="badge badge-primary mr-2"
+                                class="btn btn-outline-secondary"
                                 onClick={() => this.updatePublished(false)}
                             >
                                 UnPublish
                             </button>
                         ) : (
                             <button
-                                className="badge badge-primary mr-2"
+                                class="btn btn-success"
                                 onClick={() => this.updatePublished(true)}
                             >
                                 Publish
@@ -163,7 +169,7 @@ export default class Tutorial extends Component {
                         )}
 
                         <button
-                            className="badge badge-danger mr-2"
+                            class="btn btn-danger"
                             onClick={this.deleteTutorial}
                         >
                             Delete
@@ -171,17 +177,20 @@ export default class Tutorial extends Component {
 
                         <button
                             type="submit"
-                            className="badge badge-success"
+                            class="btn btn-primary"
                             onClick={this.updateTutorial}
                         >
                             Update
                         </button>
                         <p>{this.state.message}</p>
+
+                        <Reactions />
+                        <CommentBox />
                     </div>
                 ) : (
                     <div>
                         <br />
-                        <p>Please click on a Tutorial...</p>
+                        <p>Please click on a Hypercar...</p>
                     </div>
                 )}
             </div>

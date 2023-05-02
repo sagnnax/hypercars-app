@@ -37,6 +37,7 @@ export default class HyperList extends Component {
                 title: data.title,
                 description: data.description,
                 published: data.published,
+                url: data.url
             });
         });
 
@@ -66,15 +67,15 @@ export default class HyperList extends Component {
         const { tutorials, currentTutorial, currentIndex } = this.state;
 
         return (
-            <div className="list row">
-                <div className="col-md-6">
-                    <h4>Tutorials List</h4>
+            <div className="list-row">
+                <div className="col-md-6 bg-dark mx-auto">
+                    <h4>Lista de Hypercars</h4>
 
                     <ul className="list-group">
                         {tutorials &&
                             tutorials.map((tutorial, index) => (
                                 <li
-                                    className={"list-group-item " + (index === currentIndex ? "active" : "")}
+                                    className={"list-group-item" + (index === currentIndex ? "active" : "")}
                                     onClick={() => this.setActiveTutorial(tutorial, index)}
                                     key={index}
                                 >
@@ -83,7 +84,7 @@ export default class HyperList extends Component {
                             ))}
                     </ul>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 bg-dark mx-auto" >
                     {currentTutorial ? (
                         <Hyper
                             tutorial={currentTutorial}
@@ -92,7 +93,7 @@ export default class HyperList extends Component {
                     ) : (
                         <div>
                             <br />
-                            <p>Please click on a Tutorial...</p>
+                            <p>Please click on a Hypercar...</p>
                         </div>
                     )}
                 </div>
