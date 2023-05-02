@@ -7,7 +7,6 @@ function Reactions() {
     const [hahas, setHahas] = useState(0);
     const [hates, setHates] = useState(0);
     const [sads, setSads] = useState(0);
-    const [angrys, setAngrys] = useState(0);
 
     function handleLikeClick() {
         setLikes(likes + 1);
