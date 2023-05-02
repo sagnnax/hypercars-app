@@ -29,8 +29,8 @@ class App extends Component {
           </div>
         </nav>
 
-        <div className="container mt-3">
-          <h2>Hypercars App</h2>
+        <div className="container mt-3 bg-dark mx-auto">
+          <h2 >Hypercars App</h2>
           <Routes>
             <Route path="/" element={<HypersList />} />
             <Route path="add" element={<AddHyper />} />
