@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import HyperDataService from "../services/hyper.services";
 import Hyper from "./hyper.component";
+import Reactions from "./reactions.component";
+import CommentBox from "./comments.component";
 
 export default class HyperList extends Component {
     constructor(props) {
@@ -80,6 +82,18 @@ export default class HyperList extends Component {
                                     key={index}
                                 >
                                     {tutorial.title}
+                                    <tr>
+                                        {tutorial.description}
+                                    </tr>
+                                    <img src={tutorial.url} width="540" height="280" alt=""/>
+                                    <tr>
+                                        <Reactions></Reactions>
+                                    </tr>
+                                    <tr>
+                                        <CommentBox></CommentBox>
+                                    </tr>
+
+
                                 </li>
                             ))}
                     </ul>
