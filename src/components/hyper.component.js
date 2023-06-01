@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import TutorialDataService from "../services/hyper.services";
-import Reactions from './reactions.component';
-import CommentBox from './comments.component';
 
 export default class Hypercars extends Component {
     constructor(props) {
@@ -183,9 +181,6 @@ export default class Hypercars extends Component {
                             Update
                         </button>
                         <p>{this.state.message}</p>
-
-                        <Reactions />
-                        <CommentBox />
                     </div>
                 ) : (
                     <div>
